@@ -5,12 +5,11 @@
 
 
 	use Illuminate\Contracts\Debug\ExceptionHandler;
-	use Illuminate\Contracts\Support\DeferrableProvider;
 	use Illuminate\Support\ServiceProvider;
 	use MehrIt\LaraWorkerHeartbeat\Console\WorkCommand as QueueWorkCommand;
 	use MehrIt\LaraWorkerHeartbeat\Queue\Worker;
 
-	class WorkerHeartbeatServiceProvider extends ServiceProvider implements DeferrableProvider
+	class WorkerHeartbeatServiceProvider extends ServiceProvider
 	{
 
 		protected $defer = true;
