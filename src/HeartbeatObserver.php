@@ -64,6 +64,11 @@
 		protected $nextProcessingTimeout = false;
 
 		/**
+		 * @var string|null
+		 */
+		protected $observedJobId = null;
+
+		/**
 		 * @var Dispatcher
 		 */
 		protected $events;
@@ -119,8 +124,8 @@
 				$this->events->listen(WorkerTimeoutUpdated::class, function(WorkerTimeoutUpdated $event) {
 					$this->send(self::MESSAGE_TYPE_PROCESSING_TIMEOUT, microtime(true) + $event->getTimeout());
 				});
-				$this->events->listen(JobProcessing::class, function() {
-					$this->send(self::MESSAGE_TYPE_PROCESSING, microtime(true));
+				$this->events->listen(JobProcessing::class, function(JobProcessing $event) {
+					$this->send(self::MESSAGE_TYPE_PROCESSING, $event->job->getJobId());
 				});
 				$this->events->listen([JobProcessed::class, JobExceptionOccurred::class], function() {
 					$this->send(self::MESSAGE_TYPE_PROCESSED, microtime(true));
@@ -182,7 +187,7 @@
 				exit(1);
 			}
 
-			logger("Killing queue worker with PID {$this->workerPid} because heartbeat timeout elapsed.");
+			logger("Killing queue worker with PID {$this->workerPid} " . ($this->observedJobId ? "processing job {$this->observedJobId} " : '') . " because heartbeat timeout elapsed.");
 			@posix_kill($this->workerPid, SIGKILL);
 
 			exit(0);
@@ -223,6 +228,7 @@
 				case self::MESSAGE_TYPE_PROCESSED:
 					// after processing a job or next cycle, we increment the observer timeout by the default timeout
 					$this->observerTimeoutTs = $data + $this->defaultTimeout;
+					$this->observedJobId = null;
 					break;
 
 				case self::MESSAGE_TYPE_SLEEP:
@@ -237,10 +243,13 @@
 				case self::MESSAGE_TYPE_PROCESSING_TIMEOUT:
 					// worker has set it's timeout for the processing of the next job => remember it here
 					$this->nextProcessingTimeout = $data;
+					$this->observedJobId = null;
 					break;
 
 				case self::MESSAGE_TYPE_PROCESSING:
 					// worker starts job processing
+
+					$this->observedJobId = $data;
 
 					if ($this->nextProcessingTimeout !== false) {
 						// apply timeout for next job processing
