@@ -13,7 +13,7 @@
 
 	/**
 	 * Implements the heartbeat events for workers
-	 * @package MehrIt\LaraWorkerHeartbeat
+	 * @package MehrIt\LaraWorkerHeartbeat\Queue
 	 */
 	trait Heartbeat
 	{
@@ -51,8 +51,9 @@
 			$timeout = $this->timeoutForJob($job, $options);
 
 			// only emit timeout event, if there is any timeout
+logger($options->timeout);
+logger($timeout);
 			if ($timeout) {
-
 				// if no job is received, this method is called anyways - but we do not emit the event in such case
 				if ($job)
 					$this->raiseWorkerTimeoutUpdatedEvent($timeout);

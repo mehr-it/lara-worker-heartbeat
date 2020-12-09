@@ -219,7 +219,7 @@
 
 						// even worker sleeps 3s after first cycle before receiving job in second cycle, the worker process must
 						// not be stopped because the observer timeout should be increased by the sleep duration
-						$this->assertDurationGreaterThan(3, function () {
+						$this->assertDurationGreaterThan(2.9, function () {
 							$this->assertNextMessage('Job Executed', 4000000);
 						});
 					}

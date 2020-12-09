@@ -52,6 +52,10 @@
 
 				call_user_func($child, $sockets[0]);
 
+				// close socket
+				fclose($sockets[0]);
+
+				die();
 			}
 		}
 

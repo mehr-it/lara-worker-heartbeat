@@ -93,6 +93,8 @@
 			if ($pid === -1)
 				throw new RuntimeException('Failed to fork worker heartbeat observer');
 
+			logger($pid);
+
 			if ($pid) {
 				// parent (this process will run the worker)
 
@@ -110,24 +112,30 @@
 
 				// add listeners for job events sending them to the observer
 				$this->events->listen(NoJobReceived::class, function() {
+					logger('Event ' . NoJobReceived::class . ' received');
 					// for empty job receives, we simply send a cycle message
 					$this->send(self::MESSAGE_TYPE_CYCLE, microtime(true));
 				});
 				$this->events->listen(WorkerSleep::class, function(WorkerSleep $event) {
+					logger('Event ' . WorkerSleep::class . ' received');
 					// for empty job receives, we simply send a cycle message
 					$this->send(self::MESSAGE_TYPE_SLEEP, microtime(true) + $event->getDuration());
 				});
 				$this->events->listen(WorkerStopping::class, function() {
+					logger('Event ' . WorkerStopping::class . ' received');
 					// for empty job receives, we simply send a cycle message
 					$this->send(self::MESSAGE_TYPE_STOPPING, '', true);
 				});
 				$this->events->listen(WorkerTimeoutUpdated::class, function(WorkerTimeoutUpdated $event) {
+					logger('Event ' . WorkerTimeoutUpdated::class . ' received');
 					$this->send(self::MESSAGE_TYPE_PROCESSING_TIMEOUT, microtime(true) + $event->getTimeout());
 				});
 				$this->events->listen(JobProcessing::class, function(JobProcessing $event) {
+					logger('Event ' . JobProcessing::class . ' received');
 					$this->send(self::MESSAGE_TYPE_PROCESSING, $event->job->getJobId());
 				});
 				$this->events->listen([JobProcessed::class, JobExceptionOccurred::class], function() {
+					logger('Event ' . JobProcessed::class . ' received');
 					$this->send(self::MESSAGE_TYPE_PROCESSED, microtime(true));
 				});
 
@@ -187,7 +195,7 @@
 				exit(1);
 			}
 
-			logger("Killing queue worker with PID {$this->workerPid} " . ($this->observedJobId ? "processing job {$this->observedJobId} " : '') . " because heartbeat timeout elapsed.");
+			logger("Killing queue worker with PID {$this->workerPid} " . ($this->observedJobId ? "processing job {$this->observedJobId} " : '') . "because heartbeat timeout elapsed.");
 			@posix_kill($this->workerPid, SIGKILL);
 
 			exit(0);

@@ -47,7 +47,10 @@
 			$worker = new Worker(
 				app('queue'),
 				app('events'),
-				app(ExceptionHandler::class)
+				app(ExceptionHandler::class),
+				function() {
+					return false;
+				}
 			);
 
 			$this->runWorkerDaemon($worker, 2);
@@ -88,7 +91,10 @@
 			$worker = new Worker(
 				app('queue'),
 				app('events'),
-				app(ExceptionHandler::class)
+				app(ExceptionHandler::class),
+				function () {
+					return false;
+				}
 			);
 
 			$this->runWorkerDaemon($worker, 3, new WorkerOptions(0, 128, 60, 0.01));
@@ -132,7 +138,10 @@
 			$worker = new Worker(
 				app('queue'),
 				app('events'),
-				app(ExceptionHandler::class)
+				app(ExceptionHandler::class),
+				function () {
+					return false;
+				}
 			);
 
 			$this->runWorkerDaemon($worker, 3);
@@ -172,7 +181,10 @@
 			$worker = new Worker(
 				app('queue'),
 				app('events'),
-				app(ExceptionHandler::class)
+				app(ExceptionHandler::class),
+				function () {
+					return false;
+				}
 			);
 
 			$this->runWorkerDaemon($worker, 3);
@@ -212,7 +224,10 @@
 			$worker = new Worker(
 				app('queue'),
 				app('events'),
-				app(ExceptionHandler::class)
+				app(ExceptionHandler::class),
+				function() {
+					return false;
+				}
 			);
 
 			$this->runWorkerDaemon($worker, 2);

@@ -4,7 +4,7 @@
 	namespace MehrIt\LaraWorkerHeartbeat\Console;
 
 
-	use Illuminate\Queue\QueueManager;
+	use Illuminate\Contracts\Cache\Repository as Cache;
 	use Illuminate\Queue\Worker;
 	use MehrIt\LaraWorkerHeartbeat\HeartbeatObserver;
 	use RuntimeException;
@@ -15,26 +15,25 @@
 	 */
 	class WorkCommand extends \Illuminate\Queue\Console\WorkCommand
 	{
-
-		public function __construct(Worker $worker) {
+		public function __construct(Worker $worker, Cache $cache) {
 
 			// here we append the observer option to our signature
 			$this->signature .= ' {--heartbeat-timeout=0 : The seconds without heartbeat signal after which the worker should be killed. If empty heartbeat observation is disabled.}';
 
-			parent::__construct($worker);
+			parent::__construct($worker, $cache);
 		}
+
 
 		/**
 		 * Execute the console command.
 		 *
-		 * @return void
 		 */
 		public function handle() {
 
 			// start observer if should
 			$this->startObserverIfShould();
 
-			parent::handle();
+			return parent::handle();
 		}
 
 

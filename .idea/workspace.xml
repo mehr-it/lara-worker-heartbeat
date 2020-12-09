@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0e8cea7-73d7-40e2-bbcd-3177c5318300" name="Default Changelist" comment="log job id when killing worker">
+      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/WorkCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/WorkCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HeartbeatObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeartbeatObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provider/WorkerHeartbeatServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/WorkerHeartbeatServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Queue/Heartbeat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Queue/Heartbeat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/Console/WorkCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/Console/WorkCommandTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/FakeQueue.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/FakeQueue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/ForkedProcesses.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/ForkedProcesses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/Queue/WorkerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/Queue/WorkerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/WorkCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/WorkCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Helpers/DummyJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Helpers/DummyJob.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Homestead - LaravWorkerHeartbeat">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/orchestra/testbench-core" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/orchestra/testbench" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1RriV3LpLfLnZzG8yRLxIzO2cXM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../conference-console" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.All PHP 8.0 - Laravel 8">
+    <configuration name="All" type="Multirun" factoryName="Multirun" separateTabs="false" reuseTabsWithFailures="true" startOneByOne="true" markFailedProcess="true" hideSuccessProcess="false" delayTime="0.0">
+      <runConfiguration name="All PHP 7.3- Laravel 6" type="PHPUnit" />
+      <runConfiguration name="All PHP 7.3- Laravel 7" type="PHPUnit" />
+      <runConfiguration name="All PHP 7.3- Laravel 8" type="PHPUnit" />
+      <runConfiguration name="All PHP 7.4- Laravel 6" type="PHPUnit" />
+      <runConfiguration name="All PHP 7.4- Laravel 7" type="PHPUnit" />
+      <runConfiguration name="All PHP 7.4- Laravel 8" type="PHPUnit" />
+      <runConfiguration name="All PHP 8.0 - Laravel 7" type="PHPUnit" />
+      <runConfiguration name="All PHP 8.0 - Laravel 8" type="PHPUnit" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.3- Laravel 6" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.3" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:6.* orchestra/testbench:4.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.3- Laravel 7" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.3" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:7.* orchestra/testbench:5.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.3- Laravel 8" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.3" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:8.* orchestra/testbench:6.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.4- Laravel 6" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.4" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:6.* orchestra/testbench:4.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.4- Laravel 7" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.4" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:7.* orchestra/testbench:5.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 7.4- Laravel 8" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 7.4" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:8.* orchestra/testbench:6.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 8.0 - Laravel 7" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 8.0" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:7.* orchestra/testbench:5.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All PHP 8.0 - Laravel 8" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 8.0" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="TEST_PACKAGES" value="laravel/framework:8.* orchestra/testbench:6.*" />
+        </envs>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="Homestead PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/test/Cases/Unit" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Multirun.All" />
+      <item itemvalue="PHPUnit.All PHP 7.3- Laravel 6" />
+      <item itemvalue="PHPUnit.All PHP 7.3- Laravel 7" />
+      <item itemvalue="PHPUnit.All PHP 7.3- Laravel 8" />
+      <item itemvalue="PHPUnit.All PHP 7.4- Laravel 6" />
+      <item itemvalue="PHPUnit.All PHP 7.4- Laravel 7" />
+      <item itemvalue="PHPUnit.All PHP 7.4- Laravel 8" />
+      <item itemvalue="PHPUnit.All PHP 8.0 - Laravel 7" />
+      <item itemvalue="PHPUnit.All PHP 8.0 - Laravel 8" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0e8cea7-73d7-40e2-bbcd-3177c5318300" name="Default Changelist" comment="" />
+      <created>1570431635822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570431635822</updated>
+      <workItem from="1570431636915" duration="56919000" />
+      <workItem from="1571124983229" duration="57000" />
+      <workItem from="1571139749222" duration="3481000" />
+      <workItem from="1571903790304" duration="2592000" />
+      <workItem from="1573464328621" duration="4555000" />
+      <workItem from="1574946001723" duration="2139000" />
+      <workItem from="1575995064658" duration="14000" />
+      <workItem from="1591779696212" duration="3903000" />
+      <workItem from="1592549217156" duration="1105000" />
+      <workItem from="1592811127341" duration="10000" />
+      <workItem from="1607515111034" duration="12373000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1570524160720</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570524160720</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added license file">
+      <created>1570524394759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570524394759</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed &quot;DeferrableProvider&quot; interface for compatibility with older laravel versions">
+      <created>1570524927797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570524927797</updated>
+    </task>
+    <task id="LOCAL-00004" summary="register WorkCommand and Worker for injection type hinting">
+      <created>1570538848954</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570538848954</updated>
+    </task>
+    <task id="LOCAL-00005" summary="log job id when killing worker">
+      <created>1574695106022</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574695106022</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="added license file" />
+    <MESSAGE value="Removed &quot;DeferrableProvider&quot; interface for compatibility with older laravel versions" />
+    <MESSAGE value="register WorkCommand and Worker for injection type hinting" />
+    <MESSAGE value="log job id when killing worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="log job id when killing worker" />
+  </component>
+</project>

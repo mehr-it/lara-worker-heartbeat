@@ -20,7 +20,7 @@
 		protected function callWorkCommand($parameters = []) {
 
 			/** @var Command $cmd */
-			$cmd = new QueueWorkCommand(app('queue.worker'));
+			$cmd = new QueueWorkCommand(app('queue.worker'), cache()->store());
 			$cmd->setLaravel(app());
 
 

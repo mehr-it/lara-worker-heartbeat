@@ -9,25 +9,28 @@
 
 	class DummyJob extends Job implements \Illuminate\Contracts\Queue\Job
 	{
-		protected $id;
+		public $id;
 
-		protected $callback;
+		public $callback;
 
-		protected $att = 0;
+		public $att = 0;
 
-		protected $timeout;
+		public $timeout;
 
-		/**
-		 * DummyJob constructor.
-		 */
-		public function __construct($callback, $connectionName, $queue, $timeout = null) {
 
-			$this->id = (string)Str::uuid();
+		public function setQueue($queue) {
+			$this->queue = $queue;
+		}
+		public function setConnection($v) {
+			$this->connectionName = $v;
+		}
 
-			$this->callback       = $callback;
-			$this->queue          = $queue;
-			$this->connectionName = $connectionName;
-			$this->timeout        = $timeout;
+		public function setTimeout($v) {
+			$this->timeout = $v;
+		}
+
+		public function setContainer($v) {
+			$this->container = $v;
 		}
 
 		public function fire() {

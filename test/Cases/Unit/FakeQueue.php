@@ -13,6 +13,7 @@
 	use Illuminate\Queue\Worker;
 	use Illuminate\Queue\WorkerOptions;
 	use Illuminate\Support\Facades\Event;
+	use Illuminate\Support\Str;
 	use MehrItLaraWorkerHeartbeatTest\Helpers\DummyJob;
 	use PHPUnit\Framework\MockObject\MockObject;
 
@@ -71,7 +72,17 @@
 			if (!$callback)
 				$callback = function() { };
 
-			return new DummyJob($callback, $connection, $queue, $timeout);
+			$job = app(DummyJob::class);
+
+			$this->id = (string)Str::uuid();
+
+			$job->callback       = $callback;
+			$job->setQueue($queue);
+			$job->setConnection($connection);
+			$job->setTimeout($timeout);
+			$job->setContainer(app());
+
+			return $job;
 
 		}
 
@@ -93,8 +104,16 @@
 			});
 
 			// create default worker options (but without sleep to speed up tests)
-			if (!$options)
-				$options = new WorkerOptions(0, 128, 60, 0, 0);
+			if (!$options) {
+				$options = new WorkerOptions();
+
+				$options->timeout  = 60;
+				$options->memory   = 128;
+				$options->delay    = 0;
+				$options->sleep    = 0;
+				$options->maxTries = 0;
+
+			}
 
 			try {
 				$worker->daemon($connectionName, $queue, $options);

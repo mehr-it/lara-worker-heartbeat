@@ -5,16 +5,15 @@
 
 
 	use Illuminate\Contracts\Debug\ExceptionHandler;
+	use Illuminate\Contracts\Support\DeferrableProvider;
 	use Illuminate\Queue\Console\WorkCommand as LaravelWorkCommand;
 	use Illuminate\Queue\Worker as LaravelWorker;
 	use Illuminate\Support\ServiceProvider;
 	use MehrIt\LaraWorkerHeartbeat\Console\WorkCommand;
 	use MehrIt\LaraWorkerHeartbeat\Queue\Worker;
 
-	class WorkerHeartbeatServiceProvider extends ServiceProvider
+	class WorkerHeartbeatServiceProvider extends ServiceProvider implements DeferrableProvider
 	{
-
-		protected $defer = true;
 
 		/**
 		 * Register the service provider.
@@ -32,12 +31,21 @@
 		 * @return void
 		 */
 		protected function registerWorker() {
-			$this->app->extend('queue.worker', function () {
+
+			$isDownForMaintenance = function () {
+				return $this->app->isDownForMaintenance();
+			};
+
+			$this->app->extend('queue.worker', function () use ($isDownForMaintenance) {
+
 				return new Worker(
-					$this->app['queue'], $this->app['events'], $this->app[ExceptionHandler::class]
+					$this->app['queue'],
+					$this->app['events'],
+					$this->app[ExceptionHandler::class],
+					$isDownForMaintenance
 				);
 			});
-			$this->app->extend(LaravelWorker::class, function () {
+			$this->app->singleton(LaravelWorker::class, function () {
 				return $this->app['queue.worker'];
 			});
 			$this->app->singleton(Worker::class, function () {
@@ -50,9 +58,9 @@
 		 */
 		protected function registerQueueWorkCommand() {
 			$this->app->extend('command.queue.work', function () {
-				return new WorkCommand($this->app['queue.worker']);
+				return new WorkCommand($this->app['queue.worker'], $this->app['cache.store']);
 			});
-			$this->app->extend(LaravelWorkCommand::class, function () {
+			$this->app->singleton(LaravelWorkCommand::class, function () {
 				return $this->app['command.queue.work'];
 			});
 			$this->app->singleton(WorkCommand::class, function () {
