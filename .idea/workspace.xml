@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0e8cea7-73d7-40e2-bbcd-3177c5318300" name="Default Changelist" comment="log job id when killing worker">
-      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/WorkCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/WorkCommand.php" afterDir="false" />
+    <list default="true" id="c0e8cea7-73d7-40e2-bbcd-3177c5318300" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HeartbeatObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HeartbeatObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/WorkerHeartbeatServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/WorkerHeartbeatServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Queue/Heartbeat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Queue/Heartbeat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/Console/WorkCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/Console/WorkCommandTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/FakeQueue.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/FakeQueue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/ForkedProcesses.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/ForkedProcesses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/Queue/WorkerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/Queue/WorkerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Cases/Unit/WorkCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Cases/Unit/WorkCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Helpers/DummyJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Helpers/DummyJob.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +124,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="PHP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../conference-console" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
@@ -299,7 +287,11 @@
       <workItem from="1591779696212" duration="3903000" />
       <workItem from="1592549217156" duration="1105000" />
       <workItem from="1592811127341" duration="10000" />
-      <workItem from="1607515111034" duration="12373000" />
+      <workItem from="1607515111034" duration="12731000" />
+      <workItem from="1607684221383" duration="634000" />
+      <workItem from="1607779265650" duration="1196000" />
+      <workItem from="1608279279215" duration="599000" />
+      <workItem from="1608282450010" duration="89000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1570524160720</created>
@@ -336,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574695106022</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="upgrade for laravel 6-8">
+      <created>1607548915860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607548915860</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +359,7 @@
     <MESSAGE value="Removed &quot;DeferrableProvider&quot; interface for compatibility with older laravel versions" />
     <MESSAGE value="register WorkCommand and Worker for injection type hinting" />
     <MESSAGE value="log job id when killing worker" />
-    <option name="LAST_COMMIT_MESSAGE" value="log job id when killing worker" />
+    <MESSAGE value="upgrade for laravel 6-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade for laravel 6-8" />
   </component>
 </project>
