@@ -93,8 +93,6 @@
 			if ($pid === -1)
 				throw new RuntimeException('Failed to fork worker heartbeat observer');
 
-			logger($pid);
-
 			if ($pid) {
 				// parent (this process will run the worker)
 
